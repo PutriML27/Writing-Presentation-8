@@ -78,3 +78,49 @@ function Main(props) {
 
 export default Main;
 ```
+
+# React Testing
+React Testing adalah seperangkat helpers yang memungkinkan Anda mengetes komponen pada React tanpa bergantung pada detail implementasinya. 
+
+There are many types of testing and soon you'll be overwhelmed by the terminology, but long story short tests fall into three main categories:
+- unit testing
+- integration testing
+- UI testing
+
+### So, why test, and what is its purpose?
+- Tujuan pertama dari testing adalah untuk mencegah regresi. Regresi adalah kemunculan kembali bug yang sebelumnya telah diperbaiki. Itu membuat fitur berhenti berfungsi sebagaimana dimaksud setelah peristiwa tertentu terjadi.
+- Testing memastikan fungsionalitas komponen kompleks dan aplikasi modular.
+- Testing diperlukan untuk kinerja efektif dari aplikasi perangkat lunak atau produk.
+
+Unit Testing membuat aplikasi lebih tangguh dan tidak rentan terhadap kesalahan. Ini adalah cara untuk memverifikasi bahwa kode Anda melakukan apa yang Anda inginkan dan bahwa aplikasi Anda berfungsi sebagaimana mestinya untuk pengguna Anda.
+
+### What is Jest?
+Jest is a JavaScript test runner, that is, a JavaScript library for creating, running, and structuring tests. Jest ships as an NPM package, you can install it in any JavaScript project. Jest is one of the most popular test runner these days, and the default choice for React projects.
+
+> npm i jest --save-dev
+```
+  "scripts": {
+    "test": "jest"
+  },
+```
+
+### Menulis Basic Tests dalam React
+> src/components/__tests__/ProductList.test.js
+```
+describe('ProductHeader', () => {
+ 
+  it('passing test', () => {
+    expect(true).toBeTruthy();
+  })
+ 
+  it('failing test', () => {
+    expect(false).toBeTruthy();
+  })
+})
+```
+> yarn test
+
+![testing](https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/1795/posts/28934/image/Testing-Components-in-React-FailingSpec.png)
+
+Yang seharusnya:
+> expects(false).toBeFalsy();
